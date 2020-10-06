@@ -15,15 +15,19 @@ const roomsSchema = new Schema(
       ],
       required: true,
     },
+    numberofrooms: {
+      type: Number,
+      required: true,
+    },
     beds: {
       type: Number,
       required: true,
     },
     addons: {
-      type: String,
+      type: [String],
       required: true,
     },
-    Price: {
+    price: {
       type: Number,
       required: true,
     },
@@ -34,6 +38,6 @@ const roomsSchema = new Schema(
   }
 );
 
-const Customer = mongoose.model("Customer", customersSchema);
+const Rooms = mongoose.model("Rooms", roomsSchema);
 
-module.exports = Customer;
+module.exports = Rooms;
