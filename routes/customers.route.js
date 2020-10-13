@@ -8,7 +8,9 @@ customerRouter.get('/', ((req, res) => {
 } ))
 
 customerRouter.post('/addcustomer', ((req, res) => {
-    const {name, email, phonenumber, passportnumber, bookeddate, rooms} = req.body;
+    console.log(req.body);
+    const {rooms} = req.body;
+    const {name, email, phonenumber, passportnumber, bookeddate} = req.body.customerselect
 
     const newCustomer = new Customer({name, email, phonenumber, passportnumber, bookeddate, rooms})
     newCustomer.save()
